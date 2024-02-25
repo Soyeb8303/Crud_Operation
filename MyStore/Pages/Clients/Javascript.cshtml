@@ -1,0 +1,48 @@
+﻿@page
+@model MyStore.Pages.Clients.JavascriptModel
+@{
+}
+<h1>JAVASCRIPT IN MVC</h1>
+<script>
+    let i = 1;
+    document.write("THIS IS NUMBER LESS THEN 5  = ");
+    for (i = 1; i < 5;i++){
+
+        document.write("  "+i);
+   
+    }
+
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <script>
+            var obj = [
+                {id:1,name:"laptop 01",price:540000,pimage:"image/l1.jpeg"},
+                {id:2,name:"laptop 02",price:540000,pimage:"image/l2.png"},
+                {id:3,name:"mobile 01",price:540000,pimage:"image/m1.jpeg"},
+                {id:4,name:"shirt 01",price:540000,pimage:"image/s1.jpeg"},
+                {id:5,name:"watch 01",price:540000,pimage:"image/w1.jpeg"}
+            ]
+            obj.forEach((val) => {
+                document.write(
+                    `
+
+               <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3 mb-3">
+               <img src=${val.pimage} class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">  ${val.price} and id=${val.id}</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+
+                    `
+                )
+            })
+
+        </script>
+
+        <img src="pic/l1.jpeg">
+    </div>
+</div>

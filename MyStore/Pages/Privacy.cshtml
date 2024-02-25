@@ -1,0 +1,51 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<style>
+    body{
+        background-image:url('../pic/burger.png');
+    }
+
+    #myDiv {
+        display: none;
+    }
+    #myDiv{
+        width:300px;
+        height:250px;
+        displayLflex;
+        text-align:center;
+        background:cyan;
+        
+    }
+</style>
+<body>
+<h1>@ViewData["Title"]</h1>
+
+<h1>THIS IS PRIVACY PAGE</h1>
+<h2>SOYEB AHAMAD IS GOOD BOY AND HE IS FROM SULTANPUR.</h2>
+<img src="~/pic/burger.png" />
+
+
+
+    <button id="showButton">Show Div</button>
+    <div id="myDiv">
+        <!-- Content of the div goes here -->
+        <p>This is the hidden div content.</p>
+    </div>
+
+    <script>
+        // JavaScript to show/hide the div
+
+        document.getElementById('showButton').addEventListener('click', function () {
+            var div = document.getElementById('myDiv');
+            if (div.style.display === 'none') {
+                div.style.display = 'block';
+            } else {
+                div.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>

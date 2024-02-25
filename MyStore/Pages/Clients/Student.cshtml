@@ -1,0 +1,88 @@
+﻿@page
+@model MyStore.Pages.Clients.studentModel
+@{
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<h1>STUDENT REGISTRATION FORM</h1>
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissiable fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+    </div>
+}
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.clientInfo.id">
+
+
+    <div class="row mb-3"> 
+        <label class="col-sm-3 col-form-label fa-solid fa-id-card">&nbsp;&nbsp;ID</label>
+        <div class="col-sm-6">
+          
+            <input type="text" class="form-control" autocomplete="off" name="id"value="@Model.clientInfo.id">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label fa-solid fa-user">&nbsp;&nbsp; NAME</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" autocomplete="off" name="name" value="@Model.clientInfo.name">
+        </div>
+    </div>
+
+
+    
+    <div class="row mb-3">
+                <label class="col-sm-3 col-form-label fa-solid fa-phone">&nbsp;&nbsp;Phone</label>
+        <div class="col-sm-6">
+                <input type="text" class="form-control" autocomplete="off"  name="phone" value="@Model.clientInfo.phone">
+        </div>
+    </div>
+   
+
+
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-outline-success">Submit</button>
+        </div>
+        <div class="col-sm-3 display-grid">
+            <a class="btn btn-outline-danger" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form><br />
+<div class="text-align:center;"></div>
+    
+    <img src=URL.Content("~/MyStore/Pages/Clients/image/soyeb.jpg") alt="img"/>
+
+</body>
+</html>
+
+
+          
+     
+
+ 
+          

@@ -1,0 +1,101 @@
+﻿@page
+@model MyStore.Pages.Clients.CreateModel
+@{
+}
+
+
+<style>
+    #myDiv {
+        display: none;
+    }
+
+    #myDiv {
+        width: 300px;
+        height: 250px;
+        displayLflex;
+        text-align: center;
+        background: cyan;
+    }
+</style>
+<br>
+<h2>New Client</h2>
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissiable fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
+    </div>
+}
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.clientInfo.name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.clientInfo.email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.clientInfo.phone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="address" value="@Model.clientInfo.address">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert'arial-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn-btn-outline-success">Submit</button>
+        </div>
+        <div class="col-sm-3 display-grid">
+            <a class="btn btn-outline-danger" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>
+
+
+<body>
+
+    <button id="showButton" class="btn btn-outline-success">Show Div</button>
+    <div id="myDiv">
+        <!-- Content of the div goes here -->
+        <p>This is the hidden div content.</p>
+    </div>
+
+    <script>
+        // JavaScript to show/hide the div
+
+        document.getElementById('showButton').addEventListener('click', function () {
+            var div = document.getElementById('myDiv');
+            if (div.style.display === 'none') {
+                div.style.display = 'block';
+            } else {
+                div.style.display = 'none';
+            }
+        });
+    </script>
+
+  
+</body>
+<img src="~/image/soyeb.jpg" />
